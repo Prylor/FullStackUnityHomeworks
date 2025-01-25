@@ -1,0 +1,20 @@
+header: ContextAPI
+contextType: IGameContext
+aggressiveInlining: true
+
+namespace: SampleGame
+className: GameContextAPI
+directory: Assets/Game/Scripts/GamePlay/Context/Game/
+
+imports:
+  - UnityEngine
+  - Atomic.Entities
+  - Gameplay.Context.Game
+  - Gameplay.Context.Game.Input
+  - Atomic.Elements
+
+values:
+  - Character: IEntity
+  - GlobalPool: GlobalSceneEntityPool
+  - ProjectilePrefab: SceneEntity
+  - Kills: IReactiveVariable<int> 

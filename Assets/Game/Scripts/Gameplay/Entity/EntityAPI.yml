@@ -1,0 +1,90 @@
+header: EntityAPI
+entityType: IEntity
+aggressiveInlining: true
+
+namespace: SampleGame
+className: EntityAPI
+directory: Assets/Game/Scripts/Gameplay/Entity/
+ 
+imports:
+- UnityEngine
+- Atomic.Entities
+- System
+- Atomic.Elements
+- Modules.Gameplay
+- Atomic.Extensions
+- Gameplay.Entity.Common.TakeDamage
+
+tags:
+- Damageable
+- Moveable
+- Item
+- Melee
+- Projectile
+- Character
+
+values:
+
+# Main
+- GameObject: GameObject
+- Transform: Transform
+- Rigidbody: Rigidbody
+- VisualRoot: Transform
+- Collider: Collider
+  
+#Movement  
+- MoveCondition: IExpression<bool>
+- MoveDirection: IReactiveVariable<Vector2>
+- MoveSpeed: IValue<float>
+
+#AI
+- StoppingDistance: IValue<float>
+
+#Rotation
+- AngularSpeed: IValue<float>
+- RotateCondition: IExpression<bool>
+
+#Aim
+- AimDirection: IReactiveVariable<Vector2>
+  
+#Life
+- Health: Health
+- Lifetime: Cooldown
+- DestroyAction: IAction
+- DamageTakenEvent: IEvent<TakeDamageArgs>
+- DeathTakenEvent: IEvent<TakeDamageArgs>
+  
+#Combat
+- Weapon: IEntity
+- Damage: IReactiveVariable<int>
+- Target: IReactiveVariable<IEntity>
+
+#Item
+- UseAction: IAction<IEntity> 
+- UseEvent: IEvent
+- UseCondition: IFunction<IEntity, bool>
+
+#Physics
+- Trigger: TriggerEventReceiver
+- Collision: CollisionEventReceiver
+
+#Visual
+- Animator: Animator
+- AnimationEventReceiver: AnimationEventReceiver
+  
+#Audio
+- AudioSource: AudioSource
+
+#Ammo
+- Ammo: Ammo
+
+#Attack
+- AttackCooldown: Cooldown
+- AttackPoint: Transform
+- AttackEvent: IEvent
+- AttackAction: IAction
+- AttackRequest: IEvent
+- AttackCondition: IExpression<bool>
+- AttackRadius: IValue<float>
+- InAttack: IReactiveVariable<bool>
+  
