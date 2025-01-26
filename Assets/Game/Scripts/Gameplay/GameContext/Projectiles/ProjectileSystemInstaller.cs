@@ -1,10 +1,10 @@
 using System;
 using Atomic.Contexts;
 using Atomic.Entities;
-using Gameplay.Context.Game;
+using SampleGame;
 using UnityEngine;
 
-namespace SampleGame
+namespace Gameplay.GameContext.Projectiles
 {
     [Serializable]
     public sealed class ProjectileSystemInstaller : IContextInstaller<IGameContext>

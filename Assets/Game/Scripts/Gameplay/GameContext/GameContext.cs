@@ -1,6 +1,6 @@
 ﻿using Atomic.Contexts;
 
-namespace Gameplay.Context.Game
+namespace Gameplay.GameContext
 {
     public interface IGameContext : IContext
     {

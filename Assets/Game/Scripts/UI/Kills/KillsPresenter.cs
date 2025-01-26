@@ -1,6 +1,6 @@
 ﻿using Atomic.Elements;
 using Atomic.Presenters;
-using Gameplay.Context.Game;
+using Gameplay.GameContext;
 using SampleGame;
 using TMPro;
 using UnityEngine;

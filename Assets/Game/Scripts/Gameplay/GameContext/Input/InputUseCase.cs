@@ -1,7 +1,7 @@
 using SampleGame;
 using UnityEngine;
 
-namespace Gameplay.Context.Game.Input
+namespace Gameplay.GameContext.Input
 {
     public static class InputUseCase
     {

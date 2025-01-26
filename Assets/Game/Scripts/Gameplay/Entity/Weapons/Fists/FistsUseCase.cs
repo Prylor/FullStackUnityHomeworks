@@ -15,7 +15,7 @@ namespace SampleGame.Weapons
                 var attackPoint = fists.GetAttackPoint().position;
                 var attackRadius = fists.GetAttackRadius().Value;
 
-                if (CastCharacter(attackPoint, attackRadius, out var character))
+                if (OverlapSphereCharacter(attackPoint, attackRadius, out var character))
                 {
                     var args = new TakeDamageArgs(fists, fists.GetDamage().Value);
                     TakeDamageUseCase.TakeDamage(character, args);
@@ -30,7 +30,7 @@ namespace SampleGame.Weapons
         }
 
         // Можно вынести в более общий скоуп, но пока только тут нужно
-        public static bool CastCharacter(Vector3 point, float radius, out IEntity character)
+        public static bool OverlapSphereCharacter(Vector3 point, float radius, out IEntity character)
         {
             character = null;
 

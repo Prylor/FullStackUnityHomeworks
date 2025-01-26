@@ -6,8 +6,8 @@ using Atomic.Contexts;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using Atomic.Entities;
-using Gameplay.Context.Game;
-using Gameplay.Context.Game.Input;
+using Gameplay.GameContext;
+using Gameplay.GameContext.Input;
 using Atomic.Elements;
 
 namespace SampleGame

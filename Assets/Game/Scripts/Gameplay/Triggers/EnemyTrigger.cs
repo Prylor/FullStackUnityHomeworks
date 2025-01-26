@@ -17,7 +17,7 @@ namespace Game.Gameplay
             
             foreach (var enemy in _enemies)
             {
-                enemy.GetTarget().Value = entity;
+                EnemyUseCase.SetTarget(enemy, entity);
             }
         }
 
@@ -28,7 +28,7 @@ namespace Game.Gameplay
             
             foreach (var enemy in _enemies)
             {
-                enemy.GetTarget().Value = null;
+                EnemyUseCase.ResetTarget(enemy);
             }
         }
     }

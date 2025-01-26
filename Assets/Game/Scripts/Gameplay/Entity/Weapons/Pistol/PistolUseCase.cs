@@ -1,5 +1,6 @@
 ﻿using Atomic.Entities;
-using Gameplay.Context.Game;
+using Gameplay.GameContext;
+using Gameplay.GameContext.Projectiles;
 
 namespace SampleGame.Weapons
 {

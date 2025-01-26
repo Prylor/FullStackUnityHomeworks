@@ -1,6 +1,7 @@
 using Atomic.Elements;
 using Atomic.Entities;
-using Gameplay.Context.Game;
+using Gameplay.GameContext;
+using Gameplay.GameContext.Projectiles;
 using Modules.Gameplay;
 using SampleGame;
 using UnityEngine;

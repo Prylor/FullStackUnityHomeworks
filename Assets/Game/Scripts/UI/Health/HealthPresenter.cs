@@ -1,7 +1,7 @@
 ﻿using Atomic.Elements;
 using Atomic.Presenters;
-using Gameplay.Context.Game;
 using Gameplay.Entity.Common.TakeDamage;
+using Gameplay.GameContext;
 using Modules.Gameplay;
 using SampleGame;
 using UnityEngine;

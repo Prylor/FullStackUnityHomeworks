@@ -1,8 +1,8 @@
 using Atomic.Entities;
-using Gameplay.Context.Game;
+using SampleGame;
 using UnityEngine;
 
-namespace SampleGame
+namespace Gameplay.GameContext.Projectiles
 {
     public sealed class ProjectileUseCase
     {

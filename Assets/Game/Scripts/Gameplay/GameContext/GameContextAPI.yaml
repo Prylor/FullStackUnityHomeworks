@@ -4,13 +4,13 @@ aggressiveInlining: true
 
 namespace: SampleGame
 className: GameContextAPI
-directory: Assets/Game/Scripts/GamePlay/Context/Game/
+directory: Assets/Game/Scripts/GamePlay/GameContext
 
 imports:
   - UnityEngine
   - Atomic.Entities
-  - Gameplay.Context.Game
-  - Gameplay.Context.Game.Input
+  - Gameplay.GameContext
+  - Gameplay.GameContext.Input
   - Atomic.Elements
 
 values:

@@ -1,4 +1,5 @@
 ﻿using Atomic.Entities;
+using SampleGame.Common.Health;
 using UnityEngine;
 
 namespace SampleGame.Common
@@ -17,6 +18,14 @@ namespace SampleGame.Common
             var targetTransform = target.Value.GetTransform();
             
             return Vector3.Distance(transform.position, targetTransform.position) <= stoppingDistance.Value;
+        }
+
+        public static bool IsTargetAlive(IEntity entity)
+        {
+            if (!entity.TryGetTarget(out var target) || target.Value == null)
+                return false;
+            
+            return HealthUseCase.IsAlive(target.Value);
         }
     }
 }

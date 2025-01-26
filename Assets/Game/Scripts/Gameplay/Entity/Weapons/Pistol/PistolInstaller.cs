@@ -1,7 +1,7 @@
 ﻿using Atomic.Elements;
 using Atomic.Entities;
 using Game.Gameplay;
-using Gameplay.Context.Game;
+using Gameplay.GameContext;
 using Modules.Gameplay;
 using UnityEngine;
 

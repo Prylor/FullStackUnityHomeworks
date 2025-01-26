@@ -1,9 +1,9 @@
 using Atomic.Elements;
 using Atomic.Entities;
-using Gameplay.Context.Game;
 using Gameplay.Entity.Common.Attack;
 using Gameplay.Entity.Common.Move;
 using Gameplay.Entity.Common.TakeDamage;
+using Gameplay.GameContext;
 using Modules.Gameplay;
 using SampleGame;
 using SampleGame.Common;
@@ -49,7 +49,8 @@ namespace Game.Gameplay
             entity.SetMoveDirection(new ReactiveVector2());
             entity.AddMoveCondition(new AndExpression(
                 () => HealthUseCase.IsAlive(entity),
-                () => !TargetUseCase.IsTargetReached(entity)
+                () => !TargetUseCase.IsTargetReached(entity),
+                () => TargetUseCase.IsTargetAlive(entity)
             ));
             entity.AddRotateCondition(new AndExpression(() => HealthUseCase.IsAlive(entity)));
             entity.SetAngularSpeed(new Const<float>(angularSpeed));

@@ -1,6 +1,6 @@
 ﻿using Atomic.Presenters;
-using Gameplay.Context.Game;
-using Gameplay.Context.Game.Input;
+using Gameplay.GameContext;
+using Gameplay.GameContext.Input;
 using Modules.Common;
 using Modules.Gameplay;
 using UnityEngine;
