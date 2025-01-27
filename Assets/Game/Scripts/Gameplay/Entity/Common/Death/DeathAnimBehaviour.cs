@@ -11,12 +11,12 @@ namespace Game.Gameplay
         private static readonly int Death = Animator.StringToHash("Death");
         
         private Animator _animator;
-        private IReactive<TakeDamageArgs> _deathEvent;
+        private IReactive _deathEvent;
 
         public void Init(in IEntity entity)
         {
             _animator = entity.GetAnimator();
-            _deathEvent = entity.GetDeathTakenEvent();
+            _deathEvent = entity.GetDeathEvent();
             _deathEvent.Subscribe(OnDeath);
         }
 
@@ -25,7 +25,7 @@ namespace Game.Gameplay
             _deathEvent.Unsubscribe(OnDeath);
         }
 
-        private void OnDeath(TakeDamageArgs args)
+        private void OnDeath()
         {
            _animator.SetTrigger(Death);
         }

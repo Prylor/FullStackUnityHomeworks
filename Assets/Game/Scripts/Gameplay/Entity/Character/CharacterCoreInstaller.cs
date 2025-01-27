@@ -24,6 +24,8 @@ namespace Game.Gameplay
             InstallHealth(entity);
             InstallWeapon(entity);
             InstallCombat(entity);
+
+            entity.AddBehaviour(new DeathBehaviour());
         }
 
         private void InstallMovement(IEntity entity)
@@ -40,7 +42,7 @@ namespace Game.Gameplay
             entity.AddDamageableTag();
             entity.SetHealth(new Health(maxHealth, maxHealth));
             entity.SetDamageTakenEvent(new BaseEvent<TakeDamageArgs>());
-            entity.SetDeathTakenEvent(new BaseEvent<TakeDamageArgs>());
+            entity.SetDeathEvent(new BaseEvent());
         }
 
         private void InstallWeapon(IEntity entity)

@@ -12,7 +12,6 @@ namespace Game.Gameplay
         private readonly AudioClip _bulletSFX;
         
         private IReactive<TakeDamageArgs> _damageEvent;
-        private IReactive<TakeDamageArgs> _deathEvent;
         private AudioSource _audioSource;
 
         public TakeDamageSoundTypeBehaviour(AudioClip meleeSfx, AudioClip bulletSfx)
@@ -25,15 +24,12 @@ namespace Game.Gameplay
         {
             _audioSource = entity.GetAudioSource();
             _damageEvent = entity.GetDamageTakenEvent();
-            _deathEvent = entity.GetDeathTakenEvent();
             _damageEvent.Subscribe(this.OnDamageTaken);
-            _deathEvent.Subscribe(this.OnDamageTaken);
         }
 
         public void Dispose(in IEntity entity)
         {
             _damageEvent.Unsubscribe(this.OnDamageTaken);
-            _deathEvent.Unsubscribe(this.OnDamageTaken);
         }
 
         private void OnDamageTaken(TakeDamageArgs args)

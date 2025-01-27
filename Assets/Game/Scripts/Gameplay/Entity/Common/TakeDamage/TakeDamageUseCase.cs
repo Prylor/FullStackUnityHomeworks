@@ -14,15 +14,7 @@ namespace SampleGame
 
             if (health.Reduce(args.Damage))
             {
-                if (health.Exists())
-                {
-                    target.GetDamageTakenEvent().Invoke(args);
-                }
-                else
-                {
-                    target.GetDeathTakenEvent().Invoke(args);
-                }
-                
+                target.GetDamageTakenEvent().Invoke(args);
                 return true;
             }
             

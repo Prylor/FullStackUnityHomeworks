@@ -84,7 +84,7 @@ namespace Modules.Gameplay
                 return false;
 
             if (range == 0)
-                return true;
+                return false;
 
             this.current = Math.Max(0, this.current - range);
             this.OnStateChanged?.Invoke();

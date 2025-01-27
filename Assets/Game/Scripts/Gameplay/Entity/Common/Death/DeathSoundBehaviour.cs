@@ -16,12 +16,12 @@ namespace Game.Gameplay
         }
         
         private AudioSource _audioSource;
-        private IReactive<TakeDamageArgs> _deathEvent;
+        private IReactive _deathEvent;
 
         public void Init(in IEntity entity)
         {
             _audioSource = entity.GetAudioSource();
-            _deathEvent = entity.GetDeathTakenEvent();
+            _deathEvent = entity.GetDeathEvent();
             _deathEvent.Subscribe(this.OnDeath);
         }
 
@@ -30,7 +30,7 @@ namespace Game.Gameplay
             _deathEvent.Unsubscribe(this.OnDeath);
         }
 
-        private void OnDeath(TakeDamageArgs args)
+        private void OnDeath()
         {
             if (_clips.Length == 0)
                 return;

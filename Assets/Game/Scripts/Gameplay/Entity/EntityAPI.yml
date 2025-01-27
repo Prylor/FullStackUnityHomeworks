@@ -52,7 +52,7 @@ values:
 - Lifetime: Cooldown
 - DestroyAction: IAction
 - DamageTakenEvent: IEvent<TakeDamageArgs>
-- DeathTakenEvent: IEvent<TakeDamageArgs>
+- DeathEvent: IEvent
   
 #Combat
 - Weapon: IEntity

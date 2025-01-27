@@ -33,10 +33,11 @@ namespace Game.Gameplay
             InstallCombat(entity);
             InstallTarget(entity);
 
-            entity.GetDeathTakenEvent().Subscribe(_ => gameContext.GetKills().Value++);
+            entity.GetDeathEvent().Subscribe(() => gameContext.GetKills().Value++);
             
             entity.AddBehaviour(new MoveToTargetBehaviour());
             entity.AddBehaviour(new AttackTargetBehaviour());
+            entity.AddBehaviour(new DeathBehaviour());
         }
 
         private void InstallTarget(IEntity entity)
@@ -62,7 +63,7 @@ namespace Game.Gameplay
             entity.AddDamageableTag();
             entity.SetHealth(new Health(health, health));
             entity.SetDamageTakenEvent(new BaseEvent<TakeDamageArgs>());
-            entity.SetDeathTakenEvent(new BaseEvent<TakeDamageArgs>());
+            entity.SetDeathEvent(new BaseEvent());
         }
 
         private void InstallWeapon(IEntity entity)

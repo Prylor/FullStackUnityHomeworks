@@ -42,7 +42,7 @@ namespace SampleGame
 		public const int Lifetime = -997109026; // Cooldown
 		public const int DestroyAction = 85938956; // IAction
 		public const int DamageTakenEvent = -647889767; // IEvent<TakeDamageArgs>
-		public const int DeathTakenEvent = 542106238; // IEvent<TakeDamageArgs>
+		public const int DeathEvent = -1096613677; // IEvent
 		public const int Weapon = 1855955664; // IEntity
 		public const int Damage = 375673178; // IReactiveVariable<int>
 		public const int Target = 1103309514; // IReactiveVariable<IEntity>
@@ -413,22 +413,22 @@ namespace SampleGame
 		public static void SetDamageTakenEvent(this IEntity obj, IEvent<TakeDamageArgs> value) => obj.SetValue(DamageTakenEvent, value);
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static IEvent<TakeDamageArgs> GetDeathTakenEvent(this IEntity obj) => obj.GetValue<IEvent<TakeDamageArgs>>(DeathTakenEvent);
+		public static IEvent GetDeathEvent(this IEntity obj) => obj.GetValue<IEvent>(DeathEvent);
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool TryGetDeathTakenEvent(this IEntity obj, out IEvent<TakeDamageArgs> value) => obj.TryGetValue(DeathTakenEvent, out value);
+		public static bool TryGetDeathEvent(this IEntity obj, out IEvent value) => obj.TryGetValue(DeathEvent, out value);
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool AddDeathTakenEvent(this IEntity obj, IEvent<TakeDamageArgs> value) => obj.AddValue(DeathTakenEvent, value);
+		public static bool AddDeathEvent(this IEntity obj, IEvent value) => obj.AddValue(DeathEvent, value);
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool HasDeathTakenEvent(this IEntity obj) => obj.HasValue(DeathTakenEvent);
+		public static bool HasDeathEvent(this IEntity obj) => obj.HasValue(DeathEvent);
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool DelDeathTakenEvent(this IEntity obj) => obj.DelValue(DeathTakenEvent);
+		public static bool DelDeathEvent(this IEntity obj) => obj.DelValue(DeathEvent);
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static void SetDeathTakenEvent(this IEntity obj, IEvent<TakeDamageArgs> value) => obj.SetValue(DeathTakenEvent, value);
+		public static void SetDeathEvent(this IEntity obj, IEvent value) => obj.SetValue(DeathEvent, value);
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static IEntity GetWeapon(this IEntity obj) => obj.GetValue<IEntity>(Weapon);
